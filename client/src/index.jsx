@@ -1,16 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import allCows from "./componenents/allCows";
 // import currentCow from "./componenents/currentCow";
 import controllers from "./controllers";
 import AllCows from "./components/allcows";
+import CurrentCow from "./components/currentCow";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      allCows: { cowId: "", name: "", description: "" },
+      allCows: [],
       currentCow: { cowId: "", name: "", description: "" },
     };
 
@@ -29,16 +29,20 @@ class App extends React.Component {
       });
   }
 
-  selectCow() {
+  selectCow(selectedCow) {
     this.setState({ currentCow: selectedCow });
   }
+
   render() {
-    console.log("STATE", this.state);
+    console.log("STATE", this.state.allCows);
     return (
       <div>
         <div>
           ALL THE COWS
-          <AllCows cowList={this.state.allCows} selectCow={this.selectCow} />
+          <AllCows allCows={this.state.allCows} changeCow={this.selectCow} />
+        </div>
+        <div>
+          <CurrentCow currentCow={this.state.currentCow} />
         </div>
       </div>
     );
