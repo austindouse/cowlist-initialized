@@ -1,10 +1,10 @@
 {
   "name": "cowlist",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Copyright",
   "main": "server/index.js",
   "keywords": [],
-  "author": "",
+  "author": "Austin",
   "license": "ISC",
   "scripts": {
     "clean": "rm dist/bundle.js",
@@ -13,6 +13,7 @@
     "start": "nodemon server/index.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "bluebird": "^3.7.2",
     "express": "^4.17.1",
     "live-server": "^1.2.1",
@@ -30,5 +31,13 @@
     "babel-loader": "^8.0.6",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austindouse/cowlist-initialized.git"
+  },
+  "bugs": {
+    "url": "https://github.com/austindouse/cowlist-initialized/issues"
+  },
+  "homepage": "https://github.com/austindouse/cowlist-initialized#readme"
 }

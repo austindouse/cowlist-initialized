@@ -12,12 +12,13 @@ app.get("/", (req, res) => {
   res.render("/");
 });
 
+// var headers = defaultCorsHeaders;
+
 app.get("/api/cows", (req, res) => {
   console.log("you hit me");
   model
     .showAllCows()
     .then((data) => {
-      console.log("all cows data", data);
       res.send(data);
     })
     .catch((err) => {
@@ -39,3 +40,10 @@ app.post("/api/cows", (req, res) => {
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+// var defaultCorsHeaders = {
+//   "access-control-allow-origin": "*",
+//   "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+//   "access-control-allow-headers": "content-type, accept",
+//   "access-control-max-age": 10, // Seconds.
+// };
